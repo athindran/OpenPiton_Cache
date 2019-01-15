@@ -1,0 +1,4 @@
+trig_pc_d (1,0xfffffffff0000144) -> warmrst()
+trig_pc_d (1,0x00000000000403b4) -> warmrst()
+trig_pc_d(1,64'h0000000001834144) -> printhex("diagprinthex", %o2)
+trig_pc_d(1,64'h000000000183414c) -> printdec("diagprintdec", %o2)

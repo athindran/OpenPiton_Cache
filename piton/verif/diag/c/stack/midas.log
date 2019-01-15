@@ -1,0 +1,102 @@
+midas: init_config, project is OpenPiton.
+midas: Setting project defaults for project 'OpenPiton'.
+midas: midas -mmu=niagara -DPTON_X_TILES=1 -DPTON_Y_TILES=1 -DPTON_NUM_TILES=1 -DUART_DIV_LATCH=0xb -diag_root=/home/arkumar/ee475/openpiton/piton diag.s
+midas: Running from /home/arkumar/ee475/openpiton/piton/tools/perlmod/Midas/3.30/bin/midas
+midas: ###########################################################
+midas: ##  SETUP PHASE
+midas: ###########################################################
+midas: ### Will build in directory "/home/arkumar/ee475/openpiton/piton/verif/diag/c/stack/build"
+midas: mkdir /home/arkumar/ee475/openpiton/piton/verif/diag/c/stack/build
+midas: cp diag.s build/diag.src
+midas: cd build
+midas: Splitting diag.src into diag.s and diag.pl (if necessary).
+midas: ###########################################################
+midas: ##  PREPROCESSING PHASE
+midas: ###########################################################
+midas: bw_cpp -B -P -I. -I.. -I/home/arkumar/ee475/openpiton/piton/verif/diag/assembly/include -DGOLDFINGER=1 -DMIDAS_VERSION=3.30 -DMIDAS_MAJOR_VERS=3 -DMIDAS_MINOR_VERS=30 -DPTON_X_TILES=1 -DPTON_Y_TILES=1 -DPTON_NUM_TILES=1 -DUART_DIV_LATCH=0xb -DSUN4V=1 -DNIAGARA diag.s > diag.cpp
+In file included from /home/arkumar/ee475/openpiton/piton/verif/diag/assembly/include/c/template_mt.s:131:0,
+                 from diag.s:26:
+/home/arkumar/ee475/openpiton/piton/verif/diag/assembly/include/c/ctraps.s:26:0: warning: "ASI_AS_IF_USER_BLK_INIT_ST_QUAD_LDD_S" redefined [enabled by default]
+ #define ASI_AS_IF_USER_BLK_INIT_ST_QUAD_LDD_S 0x22
+ ^
+In file included from /home/arkumar/ee475/openpiton/piton/verif/diag/assembly/include/defines.h:29:0,
+                 from /home/arkumar/ee475/openpiton/piton/verif/diag/assembly/include/hboot.s:38,
+                 from /home/arkumar/ee475/openpiton/piton/verif/diag/assembly/include/boot.s:29,
+                 from /home/arkumar/ee475/openpiton/piton/verif/diag/assembly/include/c/template_mt.s:37,
+                 from diag.s:26:
+/home/arkumar/ee475/openpiton/piton/verif/diag/assembly/include/asi_s.h:100:0: note: this is the location of the previous definition
+ #define ASI_AS_IF_USER_BLK_INIT_ST_QUAD_LDD_S  0x23
+ ^
+midas: bw_m4  --include=. --include=.. < diag.cpp > diag.m4
+midas: rm -f mem.image diag.ev symbol.tbl diag*.exe
+midas: ###########################################################
+midas: ##  SECTION PARSING PHASE
+midas: ###########################################################
+midas: goldfinger -v -splitsec diag.m4 -midasfile diag.midas -prefix 'midas: '
+midas: goldfinger: Writing midas directives to diag.midas
+midas: goldfinger: Writing section RED_SEC to sec0.red_sec.s
+midas: goldfinger: Writing section RED_EXT_SEC to sec1.red_ext_sec.s
+midas: goldfinger: Writing section HPRIV_RESET to sec2.hpriv_reset.s
+midas: goldfinger: Writing section HTRAPS to sec3.htraps.s
+midas: goldfinger: Writing section UART_MAPPING to sec4.uart_mapping.s
+midas: goldfinger: Writing section TRAPS to sec5.traps.s
+midas: goldfinger: Writing section KERNEL to sec6.kernel.s
+midas: goldfinger: Writing section USER_HEAP to sec7.user_heap.s
+midas: goldfinger: Writing section MAIN to sec8.main.s
+midas: goldfinger: Writing section STACK0 to sec9.stack0.s
+midas: goldfinger: Writing section CUSTOM_TRAPS to sec10.custom_traps.s
+midas: goldfinger: Writing section C to sec11.c.s
+midas: goldfinger: Appending section MAIN to sec8.main.s
+midas: Finding sections in diag.midas
+midas: Processing directives in diag.midas
+midas: Copying /home/arkumar/ee475/openpiton/piton/verif/diag/c/stack/tlru_vs_rrip.c to tlru_vs_rrip.c
+midas: Compiling C code tlru_vs_rrip.c to generate tlru_vs_rrip.s
+midas: /home/arkumar/ee475/gcc_5_cross/bin/sparc64-linux-gnu-gcc -m64 -fno-common -I. -I.. -I/home/arkumar/ee475/openpiton/piton/verif/diag/c/include -O0 -S tlru_vs_rrip.c -o tlru_vs_rrip.s
+midas: Performing sanity check on arguments.
+midas: ###########################################################
+midas: ##  ASSEMBLY PHASE
+midas: ###########################################################
+midas: Building 12 sections using 3 build threads.
+midas: g_as -xarch=v9b sec0.red_sec.s -o sec0.red_sec.o
+midas: g_as -xarch=v9b sec1.red_ext_sec.s -o sec1.red_ext_sec.o
+midas: g_as -xarch=v9b sec2.hpriv_reset.s -o sec2.hpriv_reset.o
+midas: g_as -xarch=v9b sec3.htraps.s -o sec3.htraps.o
+midas: g_as -xarch=v9b sec5.traps.s -o sec5.traps.o
+midas: g_as -xarch=v9b sec4.uart_mapping.s -o sec4.uart_mapping.o
+midas: g_as -xarch=v9b sec7.user_heap.s -o sec7.user_heap.o
+midas: g_as -xarch=v9b sec6.kernel.s -o sec6.kernel.o
+midas: g_as -xarch=v9b sec8.main.s -o sec8.main.o
+midas: g_as -xarch=v9b sec10.custom_traps.s -o sec10.custom_traps.o
+midas: g_as -xarch=v9b sec9.stack0.s -o sec9.stack0.o
+midas: g_as -xarch=v9b tlru_vs_rrip.s -o tlru_vs_rrip.o
+midas: g_as -xarch=v9b sec11.c.s -o sec11.c.o
+midas: ###########################################################
+midas: ##  LINK PHASE
+midas: ###########################################################
+midas: Writing linker script diag.ld_scr.
+midas: g_ld -b elf64-sparc -no-warn-mismatch --no-check-sections -T diag.ld_scr -o diag.exe
+midas: diag.exe successfully created.
+midas: ###########################################################
+midas: ##  POSTPROCESSING PHASE
+midas: ###########################################################
+midas: Generating diag.goldfinger...
+midas: goldfinger -v -in diag.goldfinger -gentsbs -genimage -imagefile mem.image -gensymtab -symtabfile symbol.tbl -prefix 'midas: '
+midas: goldfinger: Opening file 'diag.goldfinger' for input.
+midas: symbol.tbl successfully created.
+midas: mem.image successfully created.
+midas: Generating diag.ev...
+midas: diag.ev successfully created.
+midas: ###########################################################
+midas: ##  COPY PHASE
+midas: ###########################################################
+midas: rm -f ../diag.s ../mem.image ../diag.ev ../symbol.tbl ../diag.exe ../diag.pl
+midas: Hard linking diag.s to '..'.
+midas: Hard linking mem.image to '..'.
+midas: Hard linking diag.ev to '..'.
+midas: Hard linking symbol.tbl to '..'.
+midas: Hard linking diag.exe to '..'.
+midas: cd ..
+midas: ###########################################################
+midas: ##  CLEANUP PHASE
+midas: ###########################################################
+midas: rm -rf build

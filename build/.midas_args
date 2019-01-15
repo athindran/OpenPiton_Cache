@@ -1,0 +1,1 @@
+midas -mmu=niagara -DPTON_X_TILES=1 -DPTON_Y_TILES=1 -DPTON_NUM_TILES=1 -DUART_DIV_LATCH=0xb -diag_root=/home/arkumar/ee475/openpiton/piton diag.s

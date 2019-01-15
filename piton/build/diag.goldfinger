@@ -1,0 +1,481 @@
+PA_SIZE = 40;
+
+APP default
+
+  ELF_FILE = "diag.exe";
+
+  BLOCK .red_sec_text_0
+    SECTION_NAME = ".RED_SEC";
+    SEGMENT_NAME = "text";
+    LINK_SECTION = "sec0.red_sect";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 2157;
+    COMPRESS     = 0;
+    IN_IMAGE     = 1;
+    PA_EQ_VA;
+  END BLOCK
+
+  BLOCK .red_sec_data_0
+    SECTION_NAME = ".RED_SEC";
+    SEGMENT_NAME = "data";
+    LINK_SECTION = "sec0.red_secd";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 2162;
+    COMPRESS     = 0;
+    IN_IMAGE     = 1;
+    PA_EQ_VA;
+  END BLOCK
+
+  BLOCK .red_ext_sec_text_0
+    SECTION_NAME = ".RED_EXT_SEC";
+    SEGMENT_NAME = "text";
+    LINK_SECTION = "sec1.red_ext_sect";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 2795;
+    COMPRESS     = 0;
+    IN_IMAGE     = 1;
+    PA_EQ_VA;
+  END BLOCK
+
+  BLOCK .red_ext_sec_data_0
+    SECTION_NAME = ".RED_EXT_SEC";
+    SEGMENT_NAME = "data";
+    LINK_SECTION = "sec1.red_ext_secd";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 2800;
+    COMPRESS     = 0;
+    IN_IMAGE     = 1;
+    PA_EQ_VA;
+  END BLOCK
+
+  BLOCK .hpriv_reset_text_0
+    SECTION_NAME = ".HPRIV_RESET";
+    SEGMENT_NAME = "text";
+    LINK_SECTION = "sec2.hpriv_resett";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 3414;
+    COMPRESS     = 0;
+    RA           = 0x0100144000;
+    PA           = 0x1100144000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_i_ctx_nonzero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000000;
+      data_base = 0x8000000000000540;
+    END BLOCK_TSB
+    BLOCK_TSB part_0_i_ctx_zero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000000;
+      data_base = 0x8000000000000540;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .htraps_text_0
+    SECTION_NAME = ".HTRAPS";
+    SEGMENT_NAME = "text";
+    LINK_SECTION = "sec3.htrapst";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 3453;
+    COMPRESS     = 0;
+    IN_IMAGE     = 1;
+    PA_EQ_VA;
+  END BLOCK
+
+  BLOCK .htraps_data_0
+    SECTION_NAME = ".HTRAPS";
+    SEGMENT_NAME = "data";
+    LINK_SECTION = "sec3.htrapsd";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 3457;
+    COMPRESS     = 0;
+    IN_IMAGE     = 1;
+    PA_EQ_VA;
+  END BLOCK
+
+  BLOCK .uart_mapping_data_0
+    SECTION_NAME = ".UART_MAPPING";
+    SEGMENT_NAME = "data";
+    LINK_SECTION = "sec4.uart_mappingd";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 18642;
+    COMPRESS     = 0;
+    VA           = 0x000000fff0c2c000;
+    RA           = 0xfff0c2c000;
+    PA           = 0xfff0c2c000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_d_ctx_zero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000000;
+      data_base = 0x8000000000000940;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .traps_text_0
+    SECTION_NAME = ".TRAPS";
+    SEGMENT_NAME = "text";
+    LINK_SECTION = "sec5.trapst";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 18661;
+    COMPRESS     = 0;
+    RA           = 0x0000120000;
+    PA           = 0x1000120000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_i_ctx_zero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000000;
+      data_base = 0x8000000000000540;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .traps_data_0
+    SECTION_NAME = ".TRAPS";
+    SEGMENT_NAME = "data";
+    LINK_SECTION = "sec5.trapsd";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 18671;
+    COMPRESS     = 0;
+    RA           = 0x000012c000;
+    PA           = 0x100012c000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_d_ctx_zero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000000;
+      data_base = 0x8000000000000540;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .kernel_text_0
+    SECTION_NAME = ".KERNEL";
+    SEGMENT_NAME = "text";
+    LINK_SECTION = "sec6.kernelt";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 34521;
+    COMPRESS     = 0;
+    RA           = 0x0101834000;
+    PA           = 0x1101834000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_i_ctx_nonzero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000000;
+      data_base = 0x8000000000000540;
+    END BLOCK_TSB
+    BLOCK_TSB part_0_i_ctx_zero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000000;
+      data_base = 0x8000000000000540;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .kernel_data_0
+    SECTION_NAME = ".KERNEL";
+    SEGMENT_NAME = "data";
+    LINK_SECTION = "sec6.kerneld";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 34533;
+    COMPRESS     = 0;
+    RA           = 0x0101c34000;
+    PA           = 0x1101c34000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_d_ctx_nonzero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000000;
+      data_base = 0x8000000000000540;
+    END BLOCK_TSB
+    BLOCK_TSB part_0_d_ctx_zero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000000;
+      data_base = 0x8000000000000540;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .user_heap_data_0
+    SECTION_NAME = ".USER_HEAP";
+    SEGMENT_NAME = "data";
+    LINK_SECTION = "sec7.user_heapd";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 34694;
+    COMPRESS     = 0;
+    RA           = 0x0178020000;
+    PA           = 0x1178020000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_d_ctx_nonzero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000044;
+      data_base = 0x8000000000000540;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .main_text_0
+    SECTION_NAME = ".MAIN";
+    SEGMENT_NAME = "text";
+    LINK_SECTION = "sec8.maint";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 34719;
+    COMPRESS     = 0;
+    VA           = 0x0000000020000000;
+    RA           = 0x0130000000;
+    PA           = 0x1130000000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_i_ctx_nonzero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000044;
+      data_base = 0x8000000000000440;
+    END BLOCK_TSB
+    BLOCK_TSB part_0_d_ctx_nonzero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000044;
+      data_base = 0x8000000000000440;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .main_data_0
+    SECTION_NAME = ".MAIN";
+    SEGMENT_NAME = "data";
+    LINK_SECTION = "sec8.maind";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 34731;
+    COMPRESS     = 0;
+    VA           = 0x0000000060000000;
+    RA           = 0x0170000000;
+    PA           = 0x1170000000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_d_ctx_nonzero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000044;
+      data_base = 0x8000000000000440;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .main_bss_0
+    SECTION_NAME = ".MAIN";
+    SEGMENT_NAME = "bss";
+    LINK_SECTION = "sec8.mainb";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 34742;
+    COMPRESS     = 0;
+    VA           = 0x0000000068030000;
+    RA           = 0x0178030000;
+    PA           = 0x1178030000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_d_ctx_nonzero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000044;
+      data_base = 0x8000000000000440;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .stack0_bss_0
+    SECTION_NAME = ".STACK0";
+    SEGMENT_NAME = "bss";
+    LINK_SECTION = "sec9.stack0b";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 34758;
+    COMPRESS     = 0;
+    VA           = 0x0000000068038000;
+    RA           = 0x0178038000;
+    PA           = 0x1178038000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_d_ctx_nonzero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000044;
+      data_base = 0x8000000000000440;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .custom_traps_text_0
+    SECTION_NAME = ".CUSTOM_TRAPS";
+    SEGMENT_NAME = "text";
+    LINK_SECTION = "sec10.custom_trapst";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 34795;
+    COMPRESS     = 0;
+    VA           = 0x0000000000500000;
+    RA           = 0x0010500000;
+    PA           = 0x1010500000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_i_ctx_zero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000000;
+      data_base = 0x8000000000000400;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .custom_traps_data_0
+    SECTION_NAME = ".CUSTOM_TRAPS";
+    SEGMENT_NAME = "data";
+    LINK_SECTION = "sec10.custom_trapsd";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 34816;
+    COMPRESS     = 0;
+    VA           = 0x0000000000510000;
+    RA           = 0x0010510000;
+    PA           = 0x1010510000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_d_ctx_zero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000000;
+      data_base = 0x8000000000000440;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .c_text_0
+    SECTION_NAME = ".C";
+    SEGMENT_NAME = "text";
+    LINK_SECTION = "sec11.ct";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 34897;
+    COMPRESS     = 0;
+    VA           = 0x0000000000520000;
+    RA           = 0x0010520000;
+    PA           = 0x1010520000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_i_ctx_nonzero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000044;
+      data_base = 0x8000000000000400;
+    END BLOCK_TSB
+  END BLOCK
+
+  BLOCK .c_data_0
+    SECTION_NAME = ".C";
+    SEGMENT_NAME = "data";
+    LINK_SECTION = "sec11.cd";
+    SRC_FILE     = "diag.m4";
+    SRC_LINE     = 34919;
+    COMPRESS     = 0;
+    VA           = 0x0000000000530000;
+    RA           = 0x0010530000;
+    PA           = 0x1010530000;
+    IN_IMAGE     = 1;
+    BLOCK_TSB part_0_d_ctx_nonzero_ps0_tsb
+      page_size = 8192;
+      va_index_bits  = 21 : 13;
+      tag_addr_bits  = 63 : 13;
+      tte_tag_addr_bits = 63 : 13;
+      data_addr_bits = 39 : 13;
+      tag_base = 0x0000000000000044;
+      data_base = 0x8000000000000440;
+    END BLOCK_TSB
+  END BLOCK
+
+
+END APP
+
+TSB part_0_i_ctx_zero_ps0_tsb
+  src_file    = "diag.m4";
+  src_line    = 288;
+  start_addr  = 0x0001000000;
+  size_bits   = 1;
+  split       = 0;
+  num_entries = 1024;
+  link_area   = part_0_tsb_link;
+END TSB
+
+TSB part_0_i_ctx_nonzero_ps0_tsb
+  src_file    = "diag.m4";
+  src_line    = 289;
+  start_addr  = 0x0002000000;
+  size_bits   = 1;
+  split       = 0;
+  num_entries = 1024;
+  link_area   = part_0_tsb_link;
+END TSB
+
+TSB part_0_d_ctx_zero_ps0_tsb
+  src_file    = "diag.m4";
+  src_line    = 292;
+  start_addr  = 0x0005000000;
+  size_bits   = 1;
+  split       = 0;
+  num_entries = 1024;
+  link_area   = part_0_tsb_link;
+END TSB
+
+TSB part_0_d_ctx_nonzero_ps0_tsb
+  src_file    = "diag.m4";
+  src_line    = 293;
+  start_addr  = 0x0006000000;
+  size_bits   = 1;
+  split       = 0;
+  num_entries = 1024;
+  link_area   = part_0_tsb_link;
+END TSB
+
+TSB_LINK part_0_tsb_link
+  src_file    = "diag.m4";
+  src_line    = 287;
+  start_addr  = 0x0041000000;
+END TSB_LINK
+

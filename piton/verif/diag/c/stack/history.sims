@@ -1,0 +1,1 @@
+Sat Jan 12 00:10:21 EST 2019 sims -sys=manycore -x_tiles=1 -y_tiles=1 -vcs_run -sim_run_args=+vcs+lic+wait -gui tlru_vs_rrip.s 

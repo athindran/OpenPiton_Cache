@@ -1,0 +1,6 @@
+Diag: openpiton                                  PASS
+Thu Jan  3 15:56:51 EST 2019
+sim.log: 93307500: Simulation -> PASS (HIT GOOD TRAP)
+Cyc=      93307, Sec=     3.510, C/S=26583.2
+ExecCyc=    52444.5, Sec=     3.510, EC/S=14941.5
+NumTiles=         1

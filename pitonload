@@ -1,0 +1,4 @@
+export PITON_ROOT=/home/arkumar/ee475/openpiton
+export PITON_GCC=/home/arkumar/ee475/gcc_5_cross/bin/sparc64-linux-gnu-gcc
+source  /home/ee475/env.sh
+source $PITON_ROOT/piton/piton_settings.bash

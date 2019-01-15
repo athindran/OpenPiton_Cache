@@ -1,0 +1,517 @@
+#line 287 "diag.m4"
+MIDAS_TSB_LINK part_0_tsb_link 0x41000000
+MIDAS_TSB part_0_i_ctx_zero_ps0_tsb    0x1000001  link=part_0_tsb_link force_ctx_zero way=0
+MIDAS_TSB part_0_i_ctx_nonzero_ps0_tsb 0x2000001 link=part_0_tsb_link way=0
+MIDAS_TSB part_0_i_ctx_zero_ps1_tsb    0x3000001  link=part_0_tsb_link force_ctx_zero way=1
+MIDAS_TSB part_0_i_ctx_nonzero_ps1_tsb 0x4000001 link=part_0_tsb_link way=1
+MIDAS_TSB part_0_d_ctx_zero_ps0_tsb    0x5000001  link=part_0_tsb_link force_ctx_zero way=0
+MIDAS_TSB part_0_d_ctx_nonzero_ps0_tsb 0x6000001 link=part_0_tsb_link way=0
+MIDAS_TSB part_0_d_ctx_zero_ps1_tsb    0x7000001  link=part_0_tsb_link force_ctx_zero way=1
+MIDAS_TSB part_0_d_ctx_nonzero_ps1_tsb 0x8000001 link=part_0_tsb_link way=1
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 2155 "diag.m4"
+SECTION .RED_SEC TEXT_VA = 0xfffffffff0000000, DATA_VA = 0xfffffffff0010000
+
+attr_text {
+	Name=.RED_SEC,
+	hypervisor
+}
+
+attr_data {
+	Name=.RED_SEC,
+	hypervisor
+}
+
+#line 2793 "diag.m4"
+SECTION .RED_EXT_SEC TEXT_VA = 0x40000, DATA_VA = 0x4c000
+
+attr_text {
+	Name=.RED_EXT_SEC,
+	hypervisor
+}
+
+attr_data {
+	Name=.RED_EXT_SEC,
+	hypervisor
+}
+
+#line 3411 "diag.m4"
+SECTION .HPRIV_RESET        TEXT_VA=0x100144000
+
+
+attr_text {
+	Name = .HPRIV_RESET,
+	RA = 0x100144000,
+	PA = 0x1100144000,
+	part_0_i_ctx_nonzero_ps0_tsb,
+	part_0_i_ctx_zero_ps0_tsb,
+	TTE_G=1,       TTE_Context=0, TTE_V=1,    TTE_Size=0, TTE_NFO=0, TTE_IE=0, 
+	TTE_Soft2=0,   TTE_Diag=0,    TTE_Soft=0, TTE_L=0,    TTE_CP=1,  TTE_CV=0, 
+	TTE_E=0,      TTE_P=1,        TTE_W=1
+	}
+
+
+
+
+
+
+
+
+#line 3452 "diag.m4"
+SECTION .HTRAPS            TEXT_VA=0x80000, DATA_VA=0x8c000
+attr_text {
+	Name = .HTRAPS,
+	hypervisor,
+	}
+attr_data {
+	Name = .HTRAPS,
+	hypervisor,
+	}
+
+
+
+
+
+
+
+
+
+				
+#line 18641 "diag.m4"
+SECTION .UART_MAPPING 	DATA_VA=0xfff0c2c000
+attr_data {
+	NAME = .UART_MAPPING,
+	PA = 0xfff0c2c000,
+	VA = 0xfff0c2c000,
+	RA = 0xfff0c2c000,
+	part_0_d_ctx_zero_ps0_tsb,
+	TTE_G=1,       TTE_Context=0x44, TTE_V=1,    TTE_Size=0, TTE_NFO=0, TTE_IE=0, 
+	TTE_Soft2=0,   TTE_Diag=0,    TTE_Soft=0, TTE_L=0,    TTE_CP=0,  TTE_CV=0, 
+	TTE_E=1,       TTE_P=1,        TTE_W=1
+}
+#line 18658 "diag.m4"
+SECTION .TRAPS         TEXT_VA=0x120000, DATA_VA=0x12c000
+
+	
+attr_text {
+	Name = .TRAPS,
+	RA = 0x120000,
+	PA = 0x1000120000,
+	part_0_i_ctx_zero_ps0_tsb,
+	TTE_G=1,       TTE_Context=0, TTE_V=1,    TTE_Size=0, TTE_NFO=0, TTE_IE=0, 
+	TTE_Soft2=0,   TTE_Diag=0,    TTE_Soft=0, TTE_L=0,    TTE_CP=1,  TTE_CV=0, 
+	TTE_E=0,      TTE_P=1,        TTE_W=1
+
+	}
+attr_data {
+	Name = .TRAPS,	
+	RA = 0x12c000,
+	PA = 0x100012c000,
+	part_0_d_ctx_zero_ps0_tsb,
+	TTE_G=1,       TTE_Context=0, TTE_V=1,    TTE_Size=0, TTE_NFO=0, TTE_IE=0, 
+	TTE_Soft2=0,   TTE_Diag=0,    TTE_Soft=0, TTE_L=0,    TTE_CP=1,  TTE_CV=0, 
+	TTE_E=0,      TTE_P=1,        TTE_W=1
+
+	}
+
+
+
+
+
+
+
+				
+
+
+
+
+
+
+				
+#line 34518 "diag.m4"
+SECTION .KERNEL      TEXT_VA =	0x1834000, DATA_VA=0x1c34000
+
+	
+attr_text {
+	Name = .KERNEL,
+	RA = 0x101834000,
+	PA = 0x1101834000,
+	part_0_i_ctx_nonzero_ps0_tsb,
+	part_0_i_ctx_zero_ps0_tsb,
+	TTE_G=1,       TTE_Context=0, TTE_V=1,    TTE_Size=0, TTE_NFO=0, TTE_IE=0, 
+	TTE_Soft2=0,   TTE_Diag=0,    TTE_Soft=0, TTE_L=0,    TTE_CP=1,  TTE_CV=0, 
+	TTE_E=0,      TTE_P=1,        TTE_W=1
+
+	}
+	
+attr_data {
+	Name = .KERNEL,
+	RA=0x101c34000,
+	PA=0x1101c34000,
+	part_0_d_ctx_nonzero_ps0_tsb,
+	part_0_d_ctx_zero_ps0_tsb,
+
+	TTE_G=1, TTE_Context=0, TTE_V=1, TTE_Size=0, TTE_NFO=0,
+	TTE_IE=0, TTE_Soft2=0, TTE_Diag=0, TTE_Soft=0,
+	TTE_L=0, TTE_CP=1, TTE_CV=0, TTE_E=0, TTE_P=1, TTE_W=1
+
+	}
+
+
+
+
+
+
+
+
+
+#line 34691 "diag.m4"
+SECTION .USER_HEAP        DATA_VA=0x68020000
+	
+
+attr_data {
+        Name = .USER_HEAP,
+        RA = 0x0178020000,
+        PA = 0x1178020000,
+        part_0_d_ctx_nonzero_ps0_tsb,
+        TTE_G=1,       TTE_Context=0x44, TTE_V=1,    TTE_Size=0, TTE_NFO=0, TTE_IE=0, 
+        TTE_Soft2=0,   TTE_Diag=0,    TTE_Soft=0, TTE_L=0,    TTE_CP=1,  TTE_CV=0, 
+        TTE_E=0,      TTE_P=1,        TTE_W=1
+        }
+
+#line 34718 "diag.m4"
+SECTION .MAIN  TEXT_VA=0x20000000, DATA_VA=0x60000000, BSS_VA=0x68030000
+attr_text {
+	Name = .MAIN,
+	VA= 0x20000000,
+	RA= 0x130000000,
+        PA= 0x1130000000,
+	part_0_i_ctx_nonzero_ps0_tsb,
+	part_0_d_ctx_nonzero_ps0_tsb,
+	TTE_G=1, TTE_Context=0x44, TTE_V=1, TTE_Size=0, TTE_NFO=0,
+	TTE_IE=0, TTE_Soft2=0, TTE_Diag=0, TTE_Soft=0,
+	TTE_L=0, TTE_CP=1, TTE_CV=0, TTE_E=0, TTE_P=0, TTE_W=1
+	}
+
+attr_data {
+	Name = .MAIN,
+        VA= 0x60000000,
+	RA= 0x170000000,
+	PA= 0x1170000000,
+	part_0_d_ctx_nonzero_ps0_tsb,
+        TTE_G=1, TTE_Context=0x44, TTE_V=1, TTE_Size=0, TTE_NFO=0,
+        TTE_IE=0, TTE_Soft2=0, TTE_Diag=0, TTE_Soft=0,
+        TTE_L=0, TTE_CP=1, TTE_CV=0, TTE_E=0, TTE_P=0, TTE_W=1
+        }
+
+attr_bss {
+	Name = .MAIN,
+        VA= 0x68030000,
+	RA= 0x178030000,
+	PA= 0x1178030000,
+	part_0_d_ctx_nonzero_ps0_tsb,
+
+        TTE_G=0, TTE_Context=0x44, TTE_V=1, TTE_Size=0, TTE_NFO=0,
+        TTE_IE=0, TTE_Soft2=0, TTE_Diag=0, TTE_Soft=0,
+        TTE_L=0, TTE_CP=1, TTE_CV=0, TTE_E=0, TTE_P=0, TTE_W=1
+        }
+
+
+
+SECTION .STACK0 BSS_VA= 0x68038000
+
+attr_bss {
+        NAME=.STACK0,
+        VA=0x68038000,
+        RA=0x178038000,
+        PA=0x1178038000,
+	    part_0_d_ctx_nonzero_ps0_tsb,
+        TTE_G=1, TTE_Context=0x44,
+        TTE_V=1, TTE_Size=0, TTE_NFO=0,
+        TTE_IE=0, TTE_Soft2=0, TTE_Diag=0, TTE_Soft=0,
+        TTE_L=0, TTE_CP=1, TTE_CV=0, TTE_E=0, TTE_P=0, TTE_W=1
+        }
+#line 34791 "diag.m4"
+SECTION .CUSTOM_TRAPS 	TEXT_VA=0x500000, 	DATA_VA=0x510000
+
+
+	
+attr_text {
+        NAME=.CUSTOM_TRAPS,
+	VA=0x500000,
+	RA=0x10500000,
+	PA=0x1010500000,
+	part_0_i_ctx_zero_ps0_tsb,
+        TTE_G=1, TTE_Context=0, TTE_V=1, TTE_Size=0, TTE_NFO=0,
+        TTE_IE=0, TTE_Soft2=0, TTE_Diag=0, TTE_Soft=0,
+        TTE_L=0, TTE_CP=1, TTE_CV=0, TTE_E=0, TTE_P=0, TTE_W=0
+	}
+
+
+
+
+
+
+
+
+
+
+	
+attr_data {
+        NAME=.CUSTOM_TRAPS,
+        VA=0x510000,
+	RA=0x10510000,
+	PA=0x1010510000,
+	part_0_d_ctx_zero_ps0_tsb,
+        TTE_G=1, TTE_Context=0, TTE_V=1, TTE_Size=0, TTE_NFO=0,
+        TTE_IE=0, TTE_Soft2=0, TTE_Diag=0, TTE_Soft=0,
+        TTE_L=0, TTE_CP=1, TTE_CV=0, TTE_E=0, TTE_P=0, TTE_W=1
+        }
+
+
+
+
+
+
+
+
+
+
+#line 34893 "diag.m4"
+SECTION .C 	TEXT_VA=0x520000, 	DATA_VA=0x530000
+
+
+	
+attr_text {
+        NAME=.C
+	VA=0x520000,
+	RA=0x10520000,
+	PA=0x1010520000,
+	part_0_i_ctx_nonzero_ps0_tsb,
+        TTE_G=0, TTE_Context=0x44, TTE_V=1, TTE_Size=0, TTE_NFO=0,
+        TTE_IE=0, TTE_Soft2=0, TTE_Diag=0, TTE_Soft=0,
+        TTE_L=0, TTE_CP=1, TTE_CV=0, TTE_E=0, TTE_P=0, TTE_W=0
+}	
+
+
+
+
+
+
+
+
+
+
+
+	
+attr_data {
+        NAME=.C,
+	VA=0x530000,
+	RA=0x10530000,
+	PA=0x1010530000,
+	part_0_d_ctx_nonzero_ps0_tsb,	
+        TTE_G=0, TTE_Context=0x44, TTE_V=1,
+	TTE_Size=0, TTE_NFO=0,
+        TTE_IE=0, TTE_Soft2=0, TTE_Diag=0, TTE_Soft=0,
+        TTE_L=0, TTE_CP=1, TTE_CV=0, TTE_E=0, TTE_P=0, TTE_W=1
+}	
+
+
+
+
+
+
+
+
+
+
+#line 41281 "diag.m4"
+SECTION .MAIN
+
+MIDAS_CC FILE=stack/factorial.c ARGS=-O2 -S
+
+SPLITSEC APP=default SECTION=.RED_SEC FILE=sec0.red_sec.s
+SPLITSEC APP=default SECTION=.RED_EXT_SEC FILE=sec1.red_ext_sec.s
+SPLITSEC APP=default SECTION=.HPRIV_RESET FILE=sec2.hpriv_reset.s
+SPLITSEC APP=default SECTION=.HTRAPS FILE=sec3.htraps.s
+SPLITSEC APP=default SECTION=.UART_MAPPING FILE=sec4.uart_mapping.s
+SPLITSEC APP=default SECTION=.TRAPS FILE=sec5.traps.s
+SPLITSEC APP=default SECTION=.KERNEL FILE=sec6.kernel.s
+SPLITSEC APP=default SECTION=.USER_HEAP FILE=sec7.user_heap.s
+SPLITSEC APP=default SECTION=.MAIN FILE=sec8.main.s
+SPLITSEC APP=default SECTION=.STACK0 FILE=sec9.stack0.s
+SPLITSEC APP=default SECTION=.CUSTOM_TRAPS FILE=sec10.custom_traps.s
+SPLITSEC APP=default SECTION=.C FILE=sec11.c.s
