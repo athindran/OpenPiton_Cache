@@ -1,9 +1,0 @@
-#!/bin/sh -h 
-PYTHONHOME=/usr/licensed/synopsys/vcs_mx_vL-2016.06/etc/search/pyh
-export PYTHONHOME
-PYTHONPATH=/usr/licensed/synopsys/vcs_mx_vL-2016.06/linux64/lib/pylib27
-export PYTHONPATH
-LD_LIBRARY_PATH=/usr/licensed/synopsys/vcs_mx_vL-2016.06/linux64/lib:/usr/licensed/synopsys/vcs_mx_vL-2016.06/linux64/lib/pylib27
-export LD_LIBRARY_PATH
-/usr/licensed/synopsys/vcs_mx_vL-2016.06/linux64/bin/vcsfind_create_index.exe  -z  "/home/arkumar/ee475/openpiton/build/manycore/rel-0.1/simv.daidir/debug_dump/fsearch/./idents_YJcWzs.xml.gz" "/home/arkumar/ee475/openpiton/build/manycore/rel-0.1/simv.daidir/debug_dump/fsearch/./idents_tapi.xml.gz" -o "/home/arkumar/ee475/openpiton/build/manycore/rel-0.1/simv.daidir/debug_dump/fsearch/fsearch.db_tmp"
-\mv "/home/arkumar/ee475/openpiton/build/manycore/rel-0.1/simv.daidir/debug_dump/fsearch/fsearch.db_tmp" "/home/arkumar/ee475/openpiton/build/manycore/rel-0.1/simv.daidir/debug_dump/fsearch/fsearch.db"
